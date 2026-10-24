@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/utils": ["./lib/utils.ts"],
+      "@/registry/*": ["./registry/*"],
+      "@entangled-ui/react": ["../packages/react/src/index.ts"],
+      "@entangled-ui/core": ["../packages/core/src/index.ts"],
+      "@entangled-ui/presets": ["../packages/presets/src/index.ts"]
+    }
+  },
+  "include": ["registry", "lib", "test"]
+}

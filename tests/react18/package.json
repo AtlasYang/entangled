@@ -1,0 +1,10 @@
+{
+  "name": "@entangled-ui/test-react18",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Pins React 18 so the React binding suite also runs against it (see vitest.config.ts).",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

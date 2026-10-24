@@ -1,0 +1,86 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`compilePeekCss > global scope: tokens on :root, one rule per next state 1`] = `
+"/* @entangled-ui/core peek: 1 keys, 2 tokens */
+@property --bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@layer entangled.state {
+  :root {
+    --en-base-bg: oklch(98% 0 0);
+    --bg: color-mix(in oklch, var(--en-base-bg), var(--en-next-bg, var(--en-base-bg)) calc(var(--en-peek) * min(var(--en-peek-amount, 0.15), 0.35) * 100%));
+    --en-base-fg: oklch(20% 0 0);
+    --fg: color-mix(in oklch, var(--en-base-fg), var(--en-next-fg, var(--en-base-fg)) calc(var(--en-peek) * min(var(--en-peek-amount, 0.15), 0.35) * 100%));
+  }
+  @media (hover: hover) {
+    :root:has([data-en-affects~="theme"][data-en-next="dark"]:hover) {
+      --en-peek: 1;
+      --en-next-bg: oklch(18% 0 0);
+      --en-next-fg: oklch(95% 0 0);
+      transition: --en-peek var(--_en-peek-duration, var(--en-peek-duration, 0s)) cubic-bezier(0.2, 0, 0, 1) var(--en-dwell);
+    }
+  }
+  :root:has([data-en-affects~="theme"][data-en-next="dark"]:focus-visible) {
+    --en-peek: 1;
+    --en-next-bg: oklch(18% 0 0);
+    --en-next-fg: oklch(95% 0 0);
+    transition: --en-peek var(--_en-peek-duration, var(--en-peek-duration, 0s)) cubic-bezier(0.2, 0, 0, 1) var(--en-dwell);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :root:not([data-en-motion="full"]) {
+      --_en-peek-duration: 0s;
+    }
+  }
+}
+"
+`;
+
+exports[`compilePeekCss > reader scope, three states, a <number> token 1`] = `
+"/* @entangled-ui/core peek: 1 keys, 2 tokens */
+@property --card-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --card-glow {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@layer entangled.state {
+  :where([data-en-by~="accent"], [data-en-by~="*"]) {
+    --en-base-card-accent: #0d9488;
+    --card-accent: color-mix(in oklch, var(--en-base-card-accent), var(--en-next-card-accent, var(--en-base-card-accent)) calc(var(--en-peek) * min(var(--en-peek-amount, 0.15), 0.35) * 100%));
+    --en-base-card-glow: 0.3;
+    --card-glow: calc(var(--en-base-card-glow) + (var(--en-next-card-glow, var(--en-base-card-glow)) - var(--en-base-card-glow)) * var(--en-peek) * min(var(--en-peek-amount, 0.15), 0.35));
+  }
+  :root:has([data-en-affects~="accent"][data-en-next="indigo"]:hover) :where([data-en-by~="accent"], [data-en-by~="*"]) {
+    --en-peek: 1;
+    --en-next-card-accent: #4f46e5;
+    --en-next-card-glow: 0.2;
+  }
+  :root:has([data-en-affects~="accent"][data-en-next="rose"]:hover) :where([data-en-by~="accent"], [data-en-by~="*"]) {
+    --en-peek: 1;
+    --en-next-card-accent: #e11d48;
+    --en-next-card-glow: 0.4;
+  }
+  :root:has([data-en-affects~="accent"][data-en-next="indigo"]:focus-visible) :where([data-en-by~="accent"], [data-en-by~="*"]) {
+    --en-peek: 1;
+    --en-next-card-accent: #4f46e5;
+    --en-next-card-glow: 0.2;
+  }
+  :root:has([data-en-affects~="accent"][data-en-next="rose"]:focus-visible) :where([data-en-by~="accent"], [data-en-by~="*"]) {
+    --en-peek: 1;
+    --en-next-card-accent: #e11d48;
+    --en-next-card-glow: 0.4;
+  }
+}
+"
+`;

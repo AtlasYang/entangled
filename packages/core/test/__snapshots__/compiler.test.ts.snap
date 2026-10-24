@@ -1,0 +1,86 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`compileGraphCss > matches the snapshot 1`] = `
+"/* @entangled-ui/core compiled: 4 writer keys */
+@layer entangled.state {
+  @media (hover: hover) {
+    :root:has([data-en-affects~="*"]:hover) [data-en-overlay] {
+      --en-preview: 1;
+      --_en-preview-duration: var(--en-duration-preview);
+      --_en-preview-ease: var(--en-ease-preview);
+      --_en-intensity-timing: 0s;
+      transition-delay: var(--en-dwell);
+    }
+    :root:has([data-en-affects~="media:*"]:hover) :is([data-en-ns~="media"], [data-en-by~="*"]):where([data-en-fx]):not([data-en-over~="media:*"], [data-en-affects~="media:*"]:hover) {
+      --en-preview: 1;
+      --en-intensity: 0.612;
+      --_en-preview-duration: var(--en-duration-preview);
+      --_en-preview-ease: var(--en-ease-preview);
+      --_en-intensity-timing: 0s;
+      transition-delay: var(--en-dwell);
+    }
+    :root:has([data-en-affects~="media:42"]:hover) :is([data-en-by~="media:42"], [data-en-by~="media:*"], [data-en-by~="*"]):where([data-en-fx]):not([data-en-over~="media:42"], [data-en-affects~="media:42"]:hover) {
+      --en-preview: 1;
+      --en-intensity: 1;
+      --_en-preview-duration: var(--en-duration-preview);
+      --_en-preview-ease: var(--en-ease-preview);
+      --_en-intensity-timing: 0s;
+      transition-delay: var(--en-dwell);
+    }
+    :root:has([data-en-affects~="theme"]:hover) :is([data-en-by~="theme"], [data-en-by~="*"]):where([data-en-fx]):not([data-en-over~="theme"], [data-en-affects~="theme"]:hover) {
+      --en-preview: 1;
+      --en-intensity: 1;
+      --_en-preview-duration: var(--en-duration-preview);
+      --_en-preview-ease: var(--en-ease-preview);
+      --_en-intensity-timing: 0s;
+      transition-delay: var(--en-dwell);
+    }
+    :root:has([data-en-affects~="theme"]:hover) [data-en-overlay] {
+      --en-preview: 1;
+      --_en-preview-duration: var(--en-duration-preview);
+      --_en-preview-ease: var(--en-ease-preview);
+      --_en-intensity-timing: 0s;
+      transition-delay: var(--en-dwell);
+    }
+  }
+  :root:has([data-en-affects~="*"]:focus-visible) [data-en-overlay] {
+    --en-preview: 1;
+    --_en-preview-duration: var(--en-duration-preview);
+    --_en-preview-ease: var(--en-ease-preview);
+    --_en-intensity-timing: 0s;
+    transition-delay: var(--en-dwell);
+  }
+  :root:has([data-en-affects~="media:*"]:focus-visible) :is([data-en-ns~="media"], [data-en-by~="*"]):where([data-en-fx]):not([data-en-over~="media:*"], [data-en-affects~="media:*"]:focus-visible) {
+    --en-preview: 1;
+    --en-intensity: 0.612;
+    --_en-preview-duration: var(--en-duration-preview);
+    --_en-preview-ease: var(--en-ease-preview);
+    --_en-intensity-timing: 0s;
+    transition-delay: var(--en-dwell);
+  }
+  :root:has([data-en-affects~="media:42"]:focus-visible) :is([data-en-by~="media:42"], [data-en-by~="media:*"], [data-en-by~="*"]):where([data-en-fx]):not([data-en-over~="media:42"], [data-en-affects~="media:42"]:focus-visible) {
+    --en-preview: 1;
+    --en-intensity: 1;
+    --_en-preview-duration: var(--en-duration-preview);
+    --_en-preview-ease: var(--en-ease-preview);
+    --_en-intensity-timing: 0s;
+    transition-delay: var(--en-dwell);
+  }
+  :root:has([data-en-affects~="theme"]:focus-visible) :is([data-en-by~="theme"], [data-en-by~="*"]):where([data-en-fx]):not([data-en-over~="theme"], [data-en-affects~="theme"]:focus-visible) {
+    --en-preview: 1;
+    --en-intensity: 1;
+    --_en-preview-duration: var(--en-duration-preview);
+    --_en-preview-ease: var(--en-ease-preview);
+    --_en-intensity-timing: 0s;
+    transition-delay: var(--en-dwell);
+  }
+  :root:has([data-en-affects~="theme"]:focus-visible) [data-en-overlay] {
+    --en-preview: 1;
+    --_en-preview-duration: var(--en-duration-preview);
+    --_en-preview-ease: var(--en-ease-preview);
+    --_en-intensity-timing: 0s;
+    transition-delay: var(--en-dwell);
+  }
+}
+"
+`;

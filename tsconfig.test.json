@@ -1,0 +1,38 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@entangled-ui/core": [
+        "./packages/core/src/index.ts"
+      ],
+      "@entangled-ui/core/auto": [
+        "./packages/core/src/auto.ts"
+      ],
+      "@entangled-ui/presets": [
+        "./packages/presets/src/index.ts"
+      ],
+      "@entangled-ui/react": [
+        "./packages/react/src/index.ts"
+      ],
+      "@entangled-ui/devtools": [
+        "./packages/devtools/src/index.ts"
+      ],
+      "@entangled-ui/devtools/always": [
+        "./packages/devtools/src/index.ts"
+      ]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "packages/*/src",
+    "packages/*/test",
+    "vitest.config.ts"
+  ]
+}

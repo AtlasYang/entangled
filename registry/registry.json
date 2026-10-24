@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "entangled",
+  "homepage": "https://example.com/entangled",
+  "items": [
+    {
+      "name": "entangled-button",
+      "type": "registry:ui",
+      "title": "Entangled Button",
+      "description": "Button that declares the keys it affects: hover previews them, confirms ring it with a gradient.",
+      "dependencies": ["@entangled-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [{ "path": "registry/entangled/entangled-button.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "entangled-switch",
+      "type": "registry:ui",
+      "title": "Entangled Switch",
+      "description": "Switch backed by Entangled state: previews exactly the elements that read its key, confirms them on toggle.",
+      "dependencies": ["@entangled-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [{ "path": "registry/entangled/entangled-switch.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "entangled-theme-toggle",
+      "type": "registry:ui",
+      "title": "Entangled ThemeToggle",
+      "description": "Light/dark toggle with global scope: a faint full-screen veil on hover and on switch.",
+      "dependencies": ["@entangled-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [{ "path": "registry/entangled/entangled-theme-toggle.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "entangled-media-card",
+      "type": "registry:ui",
+      "title": "Entangled MediaCard",
+      "description": "Image card for the upload flow: confirm sweeps the image and rings its Edit button.",
+      "dependencies": ["@entangled-ui/react"],
+      "registryDependencies": ["utils"],
+      "files": [{ "path": "registry/entangled/entangled-media-card.tsx", "type": "registry:ui" }]
+    }
+  ]
+}

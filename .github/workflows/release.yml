@@ -1,0 +1,50 @@
+name: Release
+
+# Push a tag vX.Y.Z to publish every public package at version X.Y.Z.
+# Publishes through npm trusted publishing (OIDC), without a token: each
+# package needs a trusted publisher on npmjs.com for this repo and release.yml.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write # npm trusted publishing and provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      # Trusted publishing needs npm 11.5.1 or later.
+      - run: npm install -g npm@11
+      - name: Check the tag matches every package version
+        run: |
+          node -e '
+            const { readdirSync, readFileSync } = require("node:fs");
+            const tag = process.env.GITHUB_REF_NAME.replace(/^v/, "");
+            const wrong = readdirSync("packages")
+              .map((d) => JSON.parse(readFileSync(`packages/${d}/package.json`, "utf8")))
+              .filter((p) => !p.private && p.version !== tag)
+              .map((p) => `${p.name}@${p.version}`);
+            if (wrong.length) { console.error(`Tag ${tag} does not match: ${wrong.join(", ")}`); process.exit(1); }
+          '
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test
+      - run: pnpm typecheck
+      # pnpm pack rewrites workspace: ranges to real versions; npm publishes the
+      # tarballs with OIDC. Dependencies go first.
+      - name: Publish
+        env:
+          DIST_TAG: ${{ contains(github.ref_name, '-') && 'next' || 'latest' }}
+        run: |
+          for p in presets core react devtools entangled-ui; do
+            (cd "packages/$p" && pnpm pack --pack-destination "$RUNNER_TEMP/$p")
+            npm publish "$RUNNER_TEMP/$p"/*.tgz --access public --tag "$DIST_TAG"
+          done

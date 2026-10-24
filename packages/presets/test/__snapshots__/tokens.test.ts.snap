@@ -1,0 +1,270 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`tokens > matches the snapshot 1`] = `
+"{
+  "entangled": {
+    "$description": "Entangled cue tokens (Cue Contract v1).",
+    "color": {
+      "base": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            0.62,
+            0.2,
+            276
+          ],
+          "alpha": 1
+        },
+        "$description": "The cue colour: previews, and your own confirms.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-color"
+          }
+        }
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            0.76,
+            0.14,
+            200
+          ],
+          "alpha": 1
+        },
+        "$description": "The secondary cue colour, for gradients and outer rings.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-color-2"
+          }
+        }
+      },
+      "peer": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            0.68,
+            0.19,
+            35
+          ],
+          "alpha": 1
+        },
+        "$description": "Confirms a collaborator caused (unless the actor has a colour).",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-color-peer"
+          }
+        }
+      },
+      "system": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            0.64,
+            0.11,
+            195
+          ],
+          "alpha": 1
+        },
+        "$description": "Confirms the system caused: timers, server pushes.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-color-system"
+          }
+        }
+      },
+      "source": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            0.74,
+            0.16,
+            80
+          ],
+          "alpha": 1
+        },
+        "$description": "Reverse query: the controls that affect what is inspected.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-color-source"
+          }
+        }
+      },
+      "caution": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            0.62,
+            0.21,
+            27
+          ],
+          "alpha": 1
+        },
+        "$description": "Previews of destructive changes.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-color-caution"
+          }
+        }
+      },
+      "wash-light": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            1,
+            0,
+            0
+          ],
+          "alpha": 1
+        },
+        "$description": "What washes mix toward on surfaces that encode meaning in their own hue.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-wash-light"
+          }
+        }
+      }
+    },
+    "number": {
+      "intensity": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Effect strength (0-1); the runtime sets it per element after the attention budget.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-intensity"
+          }
+        }
+      },
+      "peek-amount": {
+        "$type": "number",
+        "$value": 0.15,
+        "$description": "How much of the future state Token Peek blends in (hard cap 0.35).",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-peek-amount"
+          }
+        }
+      },
+      "contract": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "The Cue Contract version these tokens and effects follow.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-contract"
+          }
+        }
+      }
+    },
+    "duration": {
+      "preview": {
+        "$type": "duration",
+        "$value": {
+          "value": 180,
+          "unit": "ms"
+        },
+        "$description": "How long a preview takes to fade in.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-duration-preview"
+          }
+        }
+      },
+      "preview-out": {
+        "$type": "duration",
+        "$value": {
+          "value": 280,
+          "unit": "ms"
+        },
+        "$description": "How long a preview takes to fade out: longer than in, so it never just vanishes.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-duration-preview-out"
+          }
+        }
+      },
+      "confirm": {
+        "$type": "duration",
+        "$value": {
+          "value": 900,
+          "unit": "ms"
+        },
+        "$description": "How long an afterglow lasts for your own changes.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-duration-confirm"
+          }
+        }
+      },
+      "dwell": {
+        "$type": "duration",
+        "$value": {
+          "value": 120,
+          "unit": "ms"
+        },
+        "$description": "Hover time before a preview starts.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-dwell"
+          }
+        }
+      }
+    },
+    "easing": {
+      "preview": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.2,
+          0,
+          0,
+          1
+        ],
+        "$description": "The easing of a preview fading in.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-ease-preview"
+          }
+        }
+      },
+      "preview-out": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.4,
+          0,
+          0.6,
+          1
+        ],
+        "$description": "The easing of a preview fading out: lingers, then fades.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-ease-preview-out"
+          }
+        }
+      }
+    },
+    "dimension": {
+      "radius": {
+        "$type": "dimension",
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "Corner radius layered effects follow.",
+        "$extensions": {
+          "dev.entangled": {
+            "cssVar": "--en-radius"
+          }
+        }
+      }
+    }
+  }
+}"
+`;

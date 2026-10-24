@@ -1,0 +1,67 @@
+{
+  "name": "entangled-ui",
+  "version": "0.1.0",
+  "description": "Entangled in one install: core, React bindings, presets and DevTools.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtlasYang/entangled.git",
+    "directory": "packages/entangled-ui"
+  },
+  "homepage": "https://github.com/AtlasYang/entangled#readme",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./auto": {
+      "types": "./dist/auto.d.ts",
+      "import": "./dist/auto.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./presets": {
+      "types": "./dist/presets.d.ts",
+      "import": "./dist/presets.js"
+    },
+    "./devtools": {
+      "types": "./dist/devtools.d.ts",
+      "import": "./dist/devtools.js"
+    },
+    "./devtools/always": {
+      "types": "./dist/devtools-always.d.ts",
+      "import": "./dist/devtools-always.js"
+    },
+    "./entangled.css": "./dist/entangled.css",
+    "./tokens.json": "./dist/entangled.tokens.json"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -b tsconfig.json && node scripts/copy-assets.mjs"
+  },
+  "dependencies": {
+    "@entangled-ui/core": "workspace:^",
+    "@entangled-ui/devtools": "workspace:^",
+    "@entangled-ui/presets": "workspace:^",
+    "@entangled-ui/react": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

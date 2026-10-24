@@ -1,0 +1,42 @@
+{
+  "name": "@entangled-ui/devtools",
+  "version": "0.1.0",
+  "description": "Development-only overlay for Entangled: keys, connection lines, confirm log, habituation and lint.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtlasYang/entangled.git",
+    "directory": "packages/devtools"
+  },
+  "homepage": "https://github.com/AtlasYang/entangled#readme",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/noop.js",
+  "module": "./dist/noop.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": "./dist/index.js",
+      "default": "./dist/noop.js"
+    },
+    "./always": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -b tsconfig.json"
+  },
+  "peerDependencies": {
+    "@entangled-ui/core": "workspace:^"
+  },
+  "devDependencies": {
+    "@entangled-ui/core": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

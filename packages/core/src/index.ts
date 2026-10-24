@@ -1,0 +1,153 @@
+export {
+  type Key,
+  type ParsedKey,
+  GLOBAL_KEY,
+  InvalidKeyError,
+  parseKey,
+  isValidKey,
+  keyMatches,
+  splitKeys,
+} from "./key.js";
+export {
+  type Role,
+  type NodeOptions,
+  type GraphChange,
+  type GraphSnapshot,
+  type Graph,
+  createGraph,
+} from "./graph.js";
+export {
+  type BudgetOptions,
+  type BudgetCandidate,
+  type BudgetResult,
+  allocateBudget,
+  budgetIntensity,
+  selectTop,
+} from "./budget.js";
+export {
+  type Channel,
+  type Paint,
+  ATTR,
+  VARS,
+  NODE_SELECTOR,
+  WRITER_SELECTOR,
+  resolveEffect,
+  isGlobalSurface,
+  isMediaElement,
+  routesToOverlay,
+} from "./dom.js";
+export { type StyleSheetSpec, type StyleHost, createStyleHost } from "./styles.js";
+export {
+  type Sensor,
+  type SensorContext,
+  type PointerSensorOptions,
+  pointerSensor,
+  focusSensor,
+  activationSensor,
+  dragSensor,
+  isFocusVisible,
+  defaultSensors,
+} from "./sensors.js";
+export {
+  type Salience,
+  type Mode,
+  type SalienceState,
+  type EntangledOptions,
+  type ConfirmOptions,
+  type EntangledRuntime,
+  type ValuePeekWriter,
+  type ValuePeek,
+  type PreviewOptions,
+  type WriterResolution,
+  type RuntimeEvent,
+  createEntangled,
+} from "./runtime.js";
+export { type Origin, type Actor, type RemoteChange, defaultAnnouncement } from "./origin.js";
+export {
+  type ChangeKind,
+  type Change,
+  type ChangeSet,
+  type ChangeInput,
+  type FormatPhase,
+  CHANGE_KINDS,
+  changeRank,
+  toChanges,
+  parseChangeAttr,
+} from "./change.js";
+export {
+  type ForesightResult,
+  type ForesightPlan,
+  type ForeseeOptions,
+  type PlannerSpec,
+  type DiffByKeyOptions,
+  createPlanner,
+  diffByKey,
+} from "./foresight.js";
+export {
+  type Profile,
+  type ProfileDefaults,
+  type AttentionLevel,
+  type NotifyLevel,
+  type AttentionOptions,
+  type NotifyOptions,
+  type Severity,
+  ATTENTION_LEVELS,
+  PROFILE_DEFAULTS,
+  createNotifyResolver,
+} from "./attention.js";
+export {
+  type QueryModifier,
+  type ReverseQueryOptions,
+  sourcesOf,
+  reverseReach,
+  compileReverseCss,
+  isEditable,
+} from "./reverse.js";
+export {
+  type EffectKind,
+  type HabituationConfig,
+  type HabituationOptions,
+  type HabituationEntry,
+  type HabituationStore,
+  type HabituationSyncAdapter,
+  type HabituationRecord,
+  type Habituation,
+  type LocalStorageStoreOptions,
+  HABITUATION_DEFAULTS,
+  createHabituation,
+  habituationMultiplier,
+  recoveredCount,
+  parseVersionedKey,
+  habituationVar,
+  memoryHabituationStore,
+  localStorageHabituationStore,
+} from "./habituation.js";
+export {
+  type PeekSyntax,
+  type PeekTokenSpec,
+  type PeekTokenDefinition,
+  type PeekToken,
+  type PeekTokenSet,
+  type PeekRejection,
+  type PeekCompileEntry,
+  type PeekCompileOptions,
+  PeekTokenError,
+  PEEK_AMOUNT,
+  PEEK_MAX_AMOUNT,
+  PEEK_MAX_GLOBAL_NODES,
+  validatePeekTokens,
+  compilePeekCss,
+  peekTokensByState,
+  peekVars,
+} from "./peek.js";
+export {
+  type CompileInput,
+  type CompileOptions,
+  type ReaderPresence,
+  compileGraphCss,
+  readerSelectors,
+  readerPresence,
+  namespaceTokens,
+  cssString,
+} from "./compiler.js";
+export { type AutoModeInput, type AutoModeLimits, AUTO_MODE_LIMITS, chooseMode, weightedDomNodes } from "./auto-mode.js";

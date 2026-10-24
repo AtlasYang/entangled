@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`compileReverseCss > one hover and one focus rule per reader key, gated on data-en-query 1`] = `
+"/* @entangled-ui/core reverse query: 2 reader keys */
+@layer entangled.state {
+  @media (hover: hover) {
+    :root[data-en-query]:has([data-en-by~="media:4"]:hover) :is([data-en-affects~="media:*"], [data-en-affects~="media:4"]):where([data-en-fx]) {
+      --en-source: 1;
+    }
+    :root[data-en-query]:has([data-en-by~="theme"]:hover) [data-en-affects~="theme"]:where([data-en-fx]) {
+      --en-source: 1;
+    }
+  }
+  :root[data-en-query]:has([data-en-by~="media:4"]:focus-visible) :is([data-en-affects~="media:*"], [data-en-affects~="media:4"]):where([data-en-fx]) {
+    --en-source: 1;
+  }
+  :root[data-en-query]:has([data-en-by~="theme"]:focus-visible) [data-en-affects~="theme"]:where([data-en-fx]) {
+    --en-source: 1;
+  }
+}
+"
+`;

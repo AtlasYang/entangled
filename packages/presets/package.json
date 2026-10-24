@@ -1,0 +1,33 @@
+{
+  "name": "@entangled-ui/presets",
+  "version": "0.1.0",
+  "description": "Effect presets and design tokens for Entangled.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtlasYang/entangled.git",
+    "directory": "packages/presets"
+  },
+  "homepage": "https://github.com/AtlasYang/entangled#readme",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./entangled.css": "./dist/entangled.css",
+    "./tokens.json": "./dist/entangled.tokens.json"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -b tsconfig.json && node scripts/emit-css.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

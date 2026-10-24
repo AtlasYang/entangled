@@ -1,0 +1,16 @@
+{
+  "name": "@entangled-ui/registry",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "shadcn registry: Entangled-aware Button, Switch, ThemeToggle and MediaCard.",
+  "scripts": {
+    "build": "shadcn build --output public/r"
+  },
+  "dependencies": {
+    "@entangled-ui/react": "workspace:*"
+  },
+  "devDependencies": {
+    "shadcn": "3.8.5"
+  }
+}
