@@ -1,6 +1,6 @@
 {
   "name": "@entangled-ui/devtools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Development-only overlay for Entangled: keys, connection lines, confirm log, habituation and lint.",
   "license": "MIT",
   "repository": {
@@ -25,7 +25,9 @@
       "default": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -b tsconfig.json"
   },
